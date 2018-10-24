@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SMDA"
         mc:Ignorable="d"
-        Title="SMDA" Height="736" Width="1373" FontFamily="Century Gothic" WindowStartupLocation="CenterScreen" WindowState="Maximized" Foreground="#FF3A3939" Icon="SMDAICON.bmp" Closing="Window_Closing" IsEnabled="False">
+        Title="SMDA" Height="736" Width="1373" FontFamily="Century Gothic" WindowStartupLocation="CenterScreen" WindowState="Minimized" Foreground="#FF3A3939" Icon="SMDAICON.bmp">
     <Window.Background>
         <ImageBrush ImageSource="SMDALOGO.jpg"/>
     </Window.Background>
@@ -31,32 +31,29 @@
                 <MenuItem Header="Connect" HorizontalAlignment="Left" Width="151" Click="MenuItem_Click"/>
                 <MenuItem Header="Disconnect" HorizontalAlignment="Left" Width="151" Click="MenuItem_Click_1"/>
             </MenuItem>
-            <MenuItem x:Name="logOff" Header="Logoff" Click="logOff_Click"/>
+            <MenuItem x:Name="logOff" Header="LOGIN" Click="logOff_Click"/>
         </Menu>
-        <Calendar HorizontalAlignment="Left" Margin="1115,49,0,0" VerticalAlignment="Top" BorderBrush="#FF4285C9"/>
+        <Calendar HorizontalAlignment="Left" Margin="1115,49,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label" Content="Policy Number" HorizontalAlignment="Left" Margin="1115,221,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="Black"/>
-        <TextBox x:Name="txtSPolicy" HorizontalAlignment="Left" Height="22" Margin="1115,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Foreground="#FF646464" TabIndex="1" TextChanged="txtSPolicy_TextChanged" BorderBrush="#FF4285C9"/>
+        <TextBox x:Name="txtSPolicy" HorizontalAlignment="Left" Height="22" Margin="1115,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Foreground="#FF646464" TabIndex="1" TextChanged="txtSPolicy_TextChanged"/>
         <Label x:Name="label1" Content="Surnace" HorizontalAlignment="Left" Margin="1115,269,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="Black"/>
-        <TextBox x:Name="txtSSurname" HorizontalAlignment="Left" Height="22" Margin="1115,294,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Foreground="#FF646464" TabIndex="2" TextChanged="txtSSurname_TextChanged" BorderBrush="#FF4285C9"/>
+        <TextBox x:Name="txtSSurname" HorizontalAlignment="Left" Height="22" Margin="1115,294,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Foreground="#FF646464" TabIndex="2" TextChanged="txtSSurname_TextChanged"/>
         <Label x:Name="label2" Content="ID Number" HorizontalAlignment="Left" Margin="1115,317,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="Black"/>
-        <TextBox x:Name="txtSID" HorizontalAlignment="Left" Height="22" Margin="1115,342,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Foreground="#FF646464" TabIndex="3" TextChanged="txtSID_TextChanged" BorderBrush="#FF4285C9"/>
+        <TextBox x:Name="txtSID" HorizontalAlignment="Left" Height="22" Margin="1115,342,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Foreground="#FF646464" TabIndex="3" TextChanged="txtSID_TextChanged"/>
         <Label x:Name="label3" Content="Product" HorizontalAlignment="Left" Margin="1115,365,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="Black"/>
-        <ComboBox x:Name="combSProduct" HorizontalAlignment="Left" Margin="1115,390,0,0" VerticalAlignment="Top" Width="170" Foreground="#FF3A3939" TabIndex="4" Background="{x:Null}" Height="22" FontWeight="Bold" SelectionChanged="combSProduct_SelectionChanged" BorderBrush="#FF4285C9"/>
-        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="1115,425,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" TabIndex="5" Click="btnSearch_Click" BorderBrush="#FF4285C9"/>
-        <Button x:Name="btnSview" Content="View" HorizontalAlignment="Left" Margin="1195,425,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" TabIndex="6" Click="btnSview_Click" BorderBrush="#FF4285C9"/>
+        <ComboBox x:Name="combSProduct" HorizontalAlignment="Left" Margin="1115,390,0,0" VerticalAlignment="Top" Width="170" Foreground="#FF3A3939" TabIndex="4" Background="{x:Null}" Height="22" FontWeight="Bold" SelectionChanged="combSProduct_SelectionChanged"/>
+        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="1115,425,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" TabIndex="5" Click="btnSearch_Click"/>
+        <Button x:Name="btnSview" Content="View" HorizontalAlignment="Left" Margin="1195,425,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" TabIndex="6" Click="btnSview_Click"/>
         <DataGrid x:Name="gvSearch" HorizontalAlignment="Left" Margin="1094,451,0,0" VerticalAlignment="Top" Height="149" Width="250" Foreground="#FF646464" FontSize="13.333">
-            <DataGrid.Background>
-                <ImageBrush ImageSource="SMDALOGO.jpg"/>
-            </DataGrid.Background>
             <DataGrid.DataContext>
                 <local:SMADBDataSet/>
             </DataGrid.DataContext>
         </DataGrid>
-        <Button x:Name="btnSSave" Content="Save" HorizontalAlignment="Left" Margin="1100,605,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" TabIndex="7" Click="btnSSave_Click" BorderBrush="#FF4285C9"/>
-        <Button x:Name="btnSEdit" Content="Edit" HorizontalAlignment="Left" Margin="1180,605,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" TabIndex="8" Click="btnSEdit_Click" BorderBrush="#FF4285C9"/>
-        <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="1260,605,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" TabIndex="9" BorderBrush="#FF4285C9"/>
-        <Button x:Name="btnSReset" Content="Reset" HorizontalAlignment="Left" Margin="1100,631,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" TabIndex="10" Click="btnSReset_Click" BorderBrush="#FF4285C9"/>
-        <Button x:Name="btnDatabase" Content="View Database" HorizontalAlignment="Left" Margin="1180,631,0,0" VerticalAlignment="Top" Width="155" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" TabIndex="11" BorderBrush="#FF4285C9"/>
+        <Button x:Name="btnSSave" Content="Save" HorizontalAlignment="Left" Margin="1100,605,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" TabIndex="7" Click="btnSSave_Click"/>
+        <Button x:Name="btnSEdit" Content="Edit" HorizontalAlignment="Left" Margin="1180,605,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" TabIndex="8" Click="btnSEdit_Click"/>
+        <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="1260,605,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" TabIndex="9"/>
+        <Button x:Name="btnSReset" Content="Reset" HorizontalAlignment="Left" Margin="1100,631,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" TabIndex="10" Click="btnSReset_Click"/>
+        <Button x:Name="btnDatabase" Content="View Database" HorizontalAlignment="Left" Margin="1180,631,0,0" VerticalAlignment="Top" Width="155" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" TabIndex="11"/>
         <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="676" Margin="0,20,0,0" VerticalAlignment="Top" Width="1077" Background="{x:Null}">
             <TabItem Header="Personal Details" FontWeight="Bold" Height="22" Width="109" Background="{x:Null}">
                 <Grid x:Name="DatagridPersonal" Background="#FFE5E5E5">
@@ -65,7 +62,7 @@
                             <DockPanel Margin="0,146,1,40">
                                 <Grid Width="415">
                                     <GroupBox x:Name="groupBox7" Header="GroupBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="121" Width="415" FontWeight="Bold" FontSize="14.667">
-                                        <DataGrid x:Name="gvChild" HorizontalAlignment="Left" Margin="0,0,0,-1" VerticalAlignment="Top" Height="100" Width="400" Background="White" Foreground="#FF3A3939" FontSize="13.333" FontWeight="Normal" BorderBrush="#FF4285C9"/>
+                                        <DataGrid x:Name="gvChild" HorizontalAlignment="Left" Margin="0,0,0,-1" VerticalAlignment="Top" Height="100" Width="400" Background="White" Foreground="#FF3A3939" FontSize="13.333" FontWeight="Normal"/>
                                     </GroupBox>
                                 </Grid>
                             </DockPanel>
@@ -78,8 +75,8 @@
 
                     <GroupBox x:Name="groupBox1" Header="GroupBox" HorizontalAlignment="Left" Margin="423,125,0,0" VerticalAlignment="Top" Height="185" Width="192" FontWeight="Bold" FontSize="14.667"/>
 
-                    <TextBox x:Name="txtSurname1" HorizontalAlignment="Left" Height="22" Margin="15,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Foreground="#FF3A3939" TabIndex="1" BorderBrush="#FF4285C9"/>
-                    <TextBox x:Name="txtNumber" HorizontalAlignment="Left" Height="41" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" Margin="480,46,0,0" TextAlignment="Center" FontSize="26.667" Text="{Binding Datatable/ID}" IsReadOnlyCaretVisible="True" IsEnabled="False" BorderBrush="#FF4285C9">
+                    <TextBox x:Name="txtSurname1" HorizontalAlignment="Left" Height="22" Margin="15,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Foreground="#FF3A3939" TabIndex="1"/>
+                    <TextBox x:Name="txtNumber" HorizontalAlignment="Left" Height="41" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" Margin="480,46,0,0" TextAlignment="Center" FontSize="26.667" Text="{Binding Datatable/ID}" IsReadOnlyCaretVisible="True" IsEnabled="False">
                         <TextBox.ContextMenu>
                             <ContextMenu/>
                         </TextBox.ContextMenu>
@@ -90,26 +87,26 @@
                             <local:SMADBDataSet/>
                         </TextBox.DataContext>
                     </TextBox>
-                    <TextBox x:Name="txtCode2" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Margin="375,338,0,0" Foreground="#FF3A3939" TabIndex="14" BorderBrush="#FF4285C9"/>
-                    <TextBox x:Name="txtPhysical1" HorizontalAlignment="Left" Height="69" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Margin="200,291,0,0" Foreground="#FF3A3939" TabIndex="13" BorderBrush="#FF4285C9"/>
-                    <TextBox x:Name="txtCode1" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Margin="375,244,0,0" Foreground="#FF3A3939" TabIndex="12" BorderBrush="#FF4285C9"/>
-                    <TextBox x:Name="txtPostal1" HorizontalAlignment="Left" Height="69" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Margin="200,197,0,0" Foreground="#FF3A3939" TabIndex="11" BorderBrush="#FF4285C9"/>
-                    <TextBox x:Name="txtCountry1" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Margin="200,150,0,0" Foreground="#FF3A3939" TabIndex="10" BorderBrush="#FF4285C9"/>
-                    <TextBox x:Name="txtLanguage1" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Margin="200,104,0,0" Foreground="#FF3A3939" TabIndex="9" BorderBrush="#FF4285C9"/>
-                    <TextBox x:Name="txtMarital1" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Margin="200,56,0,0" Foreground="#FF3A3939" TabIndex="8" BorderBrush="#FF4285C9"/>
-                    <TextBox x:Name="txtMaiden1" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Margin="15,291,0,0" Foreground="#FF3A3939" TabIndex="6" BorderBrush="#FF4285C9"/>
-                    <TextBox x:Name="txtID1" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Margin="15,197,0,0" Foreground="#FF3A3939" TabIndex="4" BorderBrush="#FF4285C9"/>
-                    <TextBox x:Name="txtFirst1" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Margin="15,103,0,0" Foreground="#FF3A3939" TabIndex="2" BorderBrush="#FF4285C9"/>
-                    <TextBox x:Name="txtMiddle1" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Margin="15,150,0,0" Foreground="#FF3A3939" TabIndex="3" BorderBrush="#FF4285C9"/>
+                    <TextBox x:Name="txtCode2" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Margin="375,338,0,0" Foreground="#FF3A3939" TabIndex="14"/>
+                    <TextBox x:Name="txtPhysical1" HorizontalAlignment="Left" Height="69" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Margin="200,291,0,0" Foreground="#FF3A3939" TabIndex="13"/>
+                    <TextBox x:Name="txtCode1" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Margin="375,244,0,0" Foreground="#FF3A3939" TabIndex="12"/>
+                    <TextBox x:Name="txtPostal1" HorizontalAlignment="Left" Height="69" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Margin="200,197,0,0" Foreground="#FF3A3939" TabIndex="11"/>
+                    <TextBox x:Name="txtCountry1" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Margin="200,150,0,0" Foreground="#FF3A3939" TabIndex="10"/>
+                    <TextBox x:Name="txtLanguage1" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Margin="200,104,0,0" Foreground="#FF3A3939" TabIndex="9"/>
+                    <TextBox x:Name="txtMarital1" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Margin="200,56,0,0" Foreground="#FF3A3939" TabIndex="8"/>
+                    <TextBox x:Name="txtMaiden1" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Margin="15,291,0,0" Foreground="#FF3A3939" TabIndex="6"/>
+                    <TextBox x:Name="txtID1" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Margin="15,197,0,0" Foreground="#FF3A3939" TabIndex="4"/>
+                    <TextBox x:Name="txtFirst1" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Margin="15,103,0,0" Foreground="#FF3A3939" TabIndex="2"/>
+                    <TextBox x:Name="txtMiddle1" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Margin="15,150,0,0" Foreground="#FF3A3939" TabIndex="3"/>
                     <Label x:Name="label5" Content="Surname*" HorizontalAlignment="Left" Margin="15,31,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
                     <Label x:Name="label6" Content="First Name*" HorizontalAlignment="Left" Margin="15,78,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
                     <Label x:Name="label7" Content="Middle Name" HorizontalAlignment="Left" Margin="15,125,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
                     <Label x:Name="label8" Content="ID Number" HorizontalAlignment="Left" Margin="15,172,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
                     <Label x:Name="label9" Content="Date Of Birth" HorizontalAlignment="Left" Margin="15,219,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
-                    <DatePicker x:Name="Date1" HorizontalAlignment="Left" Margin="15,244,0,0" VerticalAlignment="Top" Height="22" Foreground="#FF3A3939" TabIndex="5" BorderBrush="#FF4285C9"/>
+                    <DatePicker x:Name="Date1" HorizontalAlignment="Left" Margin="15,244,0,0" VerticalAlignment="Top" Height="22" Foreground="#FF3A3939" TabIndex="5"/>
                     <Label x:Name="label10" Content="Maiden Name" HorizontalAlignment="Left" Margin="15,266,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
                     <Label x:Name="label11" Content="Gender" HorizontalAlignment="Left" Margin="15,313,0,0" VerticalAlignment="Top" Foreground="#FF3A3939"/>
-                    <ComboBox x:Name="combGender1" HorizontalAlignment="Left" Margin="15,338,0,0" VerticalAlignment="Top" Width="120" Height="22" Background="{x:Null}" Foreground="#FF3A3939" TabIndex="7" BorderBrush="#FF4285C9"/>
+                    <ComboBox x:Name="combGender1" HorizontalAlignment="Left" Margin="15,338,0,0" VerticalAlignment="Top" Width="120" Height="22" Background="{x:Null}" Foreground="#FF3A3939" TabIndex="7"/>
                     <Label x:Name="label12" Content="Marital Status" HorizontalAlignment="Left" Margin="200,31,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
                     <Label x:Name="label13" Content="Home Language" HorizontalAlignment="Left" Margin="200,78,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
                     <Label x:Name="label14" Content="Country" HorizontalAlignment="Left" Margin="200,125,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
@@ -121,27 +118,27 @@
                     <Button x:Name="btnPreviousRecord" Content="&lt;" HorizontalAlignment="Left" Margin="517,92,0,0" VerticalAlignment="Top" Width="27" Height="25" FontFamily="Gill Sans Ultra Bold" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" Click="btnPreviousRecord_Click"/>
                     <Button x:Name="btnNextRecord" Content="&gt;" HorizontalAlignment="Left" Margin="549,92,0,0" VerticalAlignment="Top" Width="27" Height="25" FontFamily="Gill Sans Ultra Bold" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" Click="btnNextRecord_Click"/>
                     <Label x:Name="label20" Content="Label" HorizontalAlignment="Left" Margin="432,148,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
-                    <TextBox x:Name="txtPremium1" HorizontalAlignment="Left" Height="22" Margin="432,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Foreground="#FF3A3939" TabIndex="15" BorderBrush="#FF4285C9"/>
+                    <TextBox x:Name="txtPremium1" HorizontalAlignment="Left" Height="22" Margin="432,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Foreground="#FF3A3939" TabIndex="15"/>
                     <Label x:Name="label21" Content="Label" HorizontalAlignment="Left" Margin="432,196,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
-                    <TextBox x:Name="txtPolicy" HorizontalAlignment="Left" Height="22" Margin="432,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Foreground="#FF3A3939" TabIndex="16" BorderBrush="#FF4285C9"/>
+                    <TextBox x:Name="txtPolicy" HorizontalAlignment="Left" Height="22" Margin="432,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Foreground="#FF3A3939" TabIndex="16"/>
                     <Label x:Name="label22" Content="Label" HorizontalAlignment="Left" Margin="432,244,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
-                    <ComboBox x:Name="combProduct1" HorizontalAlignment="Left" Margin="432,269,0,0" VerticalAlignment="Top" Width="170" Height="22" Background="{x:Null}" Foreground="#FF3A3939" TabIndex="17" ItemsSource="{Binding Members/Product}" BorderBrush="#FF4285C9">
+                    <ComboBox x:Name="combProduct1" HorizontalAlignment="Left" Margin="432,269,0,0" VerticalAlignment="Top" Width="170" Height="22" Background="{x:Null}" Foreground="#FF3A3939" TabIndex="17" ItemsSource="{Binding Members/Product}">
                         <ComboBox.DataContext>
                             <local:SMADBDataSet/>
                         </ComboBox.DataContext>
                     </ComboBox>
-                    <TextBox x:Name="txtEmployer1" HorizontalAlignment="Left" Height="22" Margin="648,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Foreground="#FF3A3939" TabIndex="18" BorderBrush="#FF4285C9"/>
-                    <TextBox x:Name="txtTWork2" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Margin="456,423,0,0" Foreground="#FF3A3939" TabIndex="35" BorderBrush="#FF4285C9"/>
-                    <TextBox x:Name="txtFax" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Margin="878,196,0,0" Foreground="#FF3A3939" TabIndex="26" BorderBrush="#FF4285C9"/>
-                    <TextBox x:Name="txtMobile1" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Margin="878,150,0,0" Foreground="#FF3A3939" TabIndex="25" BorderBrush="#FF4285C9"/>
-                    <TextBox x:Name="txtTHome1" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Margin="878,103,0,0" Foreground="#FF3A3939" TabIndex="24" BorderBrush="#FF4285C9"/>
-                    <TextBox x:Name="txtTWork1" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Margin="878,56,0,0" Foreground="#FF3A3939" TabIndex="23" BorderBrush="#FF4285C9"/>
-                    <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="350" Margin="698,226,0,0" Foreground="#FF3A3939" TabIndex="22" BorderBrush="#FF4285C9"/>
-                    <TextBox x:Name="txtCode3" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Margin="823,199,0,0" Foreground="#FF3A3939" TabIndex="21" BorderBrush="#FF4285C9"/>
-                    <TextBox x:Name="txtWorkA1" HorizontalAlignment="Left" Height="66" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Margin="648,152,0,0" Foreground="#FF3A3939" TabIndex="20" BorderBrush="#FF4285C9"/>
+                    <TextBox x:Name="txtEmployer1" HorizontalAlignment="Left" Height="22" Margin="648,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Foreground="#FF3A3939" TabIndex="18"/>
+                    <TextBox x:Name="txtTWork2" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Margin="456,423,0,0" Foreground="#FF3A3939" TabIndex="35"/>
+                    <TextBox x:Name="txtFax" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Margin="878,196,0,0" Foreground="#FF3A3939" TabIndex="26"/>
+                    <TextBox x:Name="txtMobile1" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Margin="878,150,0,0" Foreground="#FF3A3939" TabIndex="25"/>
+                    <TextBox x:Name="txtTHome1" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Margin="878,103,0,0" Foreground="#FF3A3939" TabIndex="24"/>
+                    <TextBox x:Name="txtTWork1" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Margin="878,56,0,0" Foreground="#FF3A3939" TabIndex="23"/>
+                    <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="350" Margin="698,226,0,0" Foreground="#FF3A3939" TabIndex="22"/>
+                    <TextBox x:Name="txtCode3" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Margin="823,199,0,0" Foreground="#FF3A3939" TabIndex="21"/>
+                    <TextBox x:Name="txtWorkA1" HorizontalAlignment="Left" Height="66" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Margin="648,152,0,0" Foreground="#FF3A3939" TabIndex="20"/>
                     <Label x:Name="label23" Content="Employer" HorizontalAlignment="Left" Margin="648,31,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
                     <Label x:Name="label24" Content="Occupation" HorizontalAlignment="Left" Margin="648,79,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
-                    <TextBox x:Name="txtOccupation1" HorizontalAlignment="Left" Height="22" Margin="648,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Foreground="#FF3A3939" TabIndex="19" BorderBrush="#FF4285C9"/>
+                    <TextBox x:Name="txtOccupation1" HorizontalAlignment="Left" Height="22" Margin="648,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Foreground="#FF3A3939" TabIndex="19"/>
                     <Label x:Name="label25" Content="Work Address" HorizontalAlignment="Left" Margin="648,127,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
                     <Label x:Name="label26" Content="Zip" HorizontalAlignment="Left" Margin="823,174,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
                     <Label x:Name="label27" Content="Email" HorizontalAlignment="Left" Margin="648,221,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
@@ -151,78 +148,73 @@
                     <Label x:Name="label31" Content="Label" HorizontalAlignment="Left" Margin="878,173,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
                     <Label x:Name="label32" Content="Surname" HorizontalAlignment="Left" Margin="15,398,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
                     <Label x:Name="label33" Content="First Name" HorizontalAlignment="Left" Margin="15,445,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
-                    <TextBox x:Name="txtSurname2" HorizontalAlignment="Left" Height="22" Margin="15,423,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" Foreground="#FF3A3939" TabIndex="27" BorderBrush="#FF4285C9"/>
+                    <TextBox x:Name="txtSurname2" HorizontalAlignment="Left" Height="22" Margin="15,423,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" Foreground="#FF3A3939" TabIndex="27"/>
                     <TextBox x:Name="txtFirst2" HorizontalAlignment="Left" Height="22" Margin="15,470,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" Foreground="#FF3A3939" TabIndex="28"/>
                     <Label x:Name="label34" Content="Middle Name" HorizontalAlignment="Left" Margin="15,493,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
-                    <TextBox x:Name="txtMiddle2" HorizontalAlignment="Left" Height="22" Margin="15,518,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" Foreground="#FF3A3939" TabIndex="29" BorderBrush="#FF4285C9"/>
+                    <TextBox x:Name="txtMiddle2" HorizontalAlignment="Left" Height="22" Margin="15,518,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" Foreground="#FF3A3939" TabIndex="29"/>
                     <Label x:Name="label35" Content="ID Number" HorizontalAlignment="Left" Margin="15,541,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
-                    <TextBox x:Name="txtID2" HorizontalAlignment="Left" Height="22" Margin="15,566,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" Foreground="#FF3A3939" TabIndex="30" BorderBrush="#FF4285C9"/>
+                    <TextBox x:Name="txtID2" HorizontalAlignment="Left" Height="22" Margin="15,566,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" Foreground="#FF3A3939" TabIndex="30"/>
                     <Label x:Name="label36" Content="Maiden Name" HorizontalAlignment="Left" Margin="200,398,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
                     <Label x:Name="label37" Content="Country" HorizontalAlignment="Left" Margin="200,445,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
-                    <TextBox x:Name="txtMaiden2" HorizontalAlignment="Left" Height="22" Margin="187,423,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" Foreground="#FF3A3939" TabIndex="31" BorderBrush="#FF4285C9"/>
-                    <TextBox x:Name="txtCountry2" HorizontalAlignment="Left" Height="22" Margin="187,470,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" Foreground="#FF3A3939" TabIndex="32" BorderBrush="#FF4285C9"/>
+                    <TextBox x:Name="txtMaiden2" HorizontalAlignment="Left" Height="22" Margin="187,423,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" Foreground="#FF3A3939" TabIndex="31"/>
+                    <TextBox x:Name="txtCountry2" HorizontalAlignment="Left" Height="22" Margin="187,470,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" Foreground="#FF3A3939" TabIndex="32"/>
                     <Label x:Name="label38" Content="Gender" HorizontalAlignment="Left" Margin="200,494,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
-                    <ComboBox x:Name="combGender2" HorizontalAlignment="Left" Margin="200,520,0,0" VerticalAlignment="Top" Width="120" Height="22" Background="{x:Null}" Foreground="#FF3A3939" TabIndex="33" BorderBrush="#FF4285C9"/>
-                    <DatePicker x:Name="Date2" HorizontalAlignment="Left" Margin="200,566,0,0" VerticalAlignment="Top" Height="22" Foreground="#FF3A3939" TabIndex="34" BorderBrush="#FF4285C9"/>
+                    <ComboBox x:Name="combGender2" HorizontalAlignment="Left" Margin="200,520,0,0" VerticalAlignment="Top" Width="120" Height="22" Background="{x:Null}" Foreground="#FF3A3939" TabIndex="33"/>
+                    <DatePicker x:Name="Date2" HorizontalAlignment="Left" Margin="200,566,0,0" VerticalAlignment="Top" Height="22" Foreground="#FF3A3939" TabIndex="34"/>
                     <Label x:Name="label39" Content="Date Of Birth" HorizontalAlignment="Left" Margin="200,541,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
                     <Label x:Name="label40" Content="Tel. Work" HorizontalAlignment="Left" Margin="384,423,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
                     <Label x:Name="label41" Content="Tel. Home" HorizontalAlignment="Left" Margin="384,451,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
-                    <TextBox x:Name="txtTHome2" HorizontalAlignment="Left" Height="22" Margin="456,451,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Foreground="#FF3A3939" TabIndex="36" BorderBrush="#FF4285C9"/>
-                    <TextBox x:Name="txtMobile2" HorizontalAlignment="Left" Height="22" Margin="456,479,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Foreground="#FF3A3939" TabIndex="37" BorderBrush="#FF4285C9"/>
-                    <TextBox x:Name="txtEmail2" HorizontalAlignment="Left" Height="22" Margin="420,508,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" Foreground="#FF3A3939" TabIndex="38" BorderBrush="#FF4285C9"/>
+                    <TextBox x:Name="txtTHome2" HorizontalAlignment="Left" Height="22" Margin="456,451,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Foreground="#FF3A3939" TabIndex="36"/>
+                    <TextBox x:Name="txtMobile2" HorizontalAlignment="Left" Height="22" Margin="456,479,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Foreground="#FF3A3939" TabIndex="37"/>
+                    <TextBox x:Name="txtEmail2" HorizontalAlignment="Left" Height="22" Margin="420,508,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" Foreground="#FF3A3939" TabIndex="38"/>
                     <Label x:Name="label42" Content="Mobile" HorizontalAlignment="Left" Margin="384,476,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
                     <Label x:Name="label43" Content="Email" HorizontalAlignment="Left" Margin="378,506,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
                     <Label x:Name="label44" Content="Surname" HorizontalAlignment="Left" Margin="648,296,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
-                    <TextBox x:Name="txtSurname3" HorizontalAlignment="Left" Height="22" Margin="648,321,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Foreground="#FF3A3939" TabIndex="39" BorderBrush="#FF4285C9"/>
+                    <TextBox x:Name="txtSurname3" HorizontalAlignment="Left" Height="22" Margin="648,321,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Foreground="#FF3A3939" TabIndex="39"/>
                     <Label x:Name="label45" Content="First Name" HorizontalAlignment="Left" Margin="648,343,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
-                    <TextBox x:Name="txtFirst3" HorizontalAlignment="Left" Height="22" Margin="648,368,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Foreground="#FF3A3939" TabIndex="40" BorderBrush="#FF4285C9"/>
+                    <TextBox x:Name="txtFirst3" HorizontalAlignment="Left" Height="22" Margin="648,368,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Foreground="#FF3A3939" TabIndex="40"/>
                     <Label x:Name="label46" Content="Middle Name" HorizontalAlignment="Left" Margin="648,390,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
-                    <TextBox x:Name="txtMiddle3" HorizontalAlignment="Left" Height="22" Margin="648,415,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Foreground="#FF3A3939" TabIndex="41" BorderBrush="#FF4285C9"/>
+                    <TextBox x:Name="txtMiddle3" HorizontalAlignment="Left" Height="22" Margin="648,415,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Foreground="#FF3A3939" TabIndex="41"/>
                     <Label x:Name="label47" Content="Gender" HorizontalAlignment="Left" Margin="824,390,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF3A3939"/>
-                    <ComboBox x:Name="combGender3" HorizontalAlignment="Left" Margin="823,415,0,0" VerticalAlignment="Top" Width="120" Background="{x:Null}" Foreground="#FF3A3939" TabIndex="42" BorderBrush="#FF4285C9"/>
-                    <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="660,573,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" TabIndex="43" BorderBrush="#FF4285C9"/>
-                    <Button x:Name="btnNext1" Content="Next" HorizontalAlignment="Left" Margin="982,614,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" TabIndex="44" Click="btnNext1_Click" BorderBrush="#FF4285C9"/>
+                    <ComboBox x:Name="combGender3" HorizontalAlignment="Left" Margin="823,415,0,0" VerticalAlignment="Top" Width="120" Background="{x:Null}" Foreground="#FF3A3939" TabIndex="42"/>
+                    <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="660,573,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" TabIndex="43"/>
+                    <Button x:Name="btnNext1" Content="Next" HorizontalAlignment="Left" Margin="982,614,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" TabIndex="44" Click="btnNext1_Click"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Summary" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="109" FontWeight="Bold" Margin="0" Background="{x:Null}" BorderBrush="#FF4285C9">
+            <TabItem Header="Summary" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="109" FontWeight="Bold" Margin="0" Background="{x:Null}">
                 <Grid x:Name="DatagridSummary" Background="#FFE5E5E5">
                     <GroupBox x:Name="groupBox9" Header="GroupBox" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="268" Width="793" FontSize="14.667"/>
-                    <GroupBox x:Name="groupBox8" Header="GroupBox" HorizontalAlignment="Left" Margin="616,51,0,0" VerticalAlignment="Top" Height="117" Width="172">
-                        <Label x:Name="label61" Content="Please confirm policy no." HorizontalAlignment="Left" Margin="0,64,0,0" VerticalAlignment="Top">
-                            <Label.Foreground>
-                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
-                            </Label.Foreground>
-                        </Label>
-                    </GroupBox>
-                    <Label x:Name="label48" Content="Company Policy No" HorizontalAlignment="Left" Margin="28,25,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="txtCompanyPolicy" HorizontalAlignment="Left" Height="22" Margin="28,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" FontWeight="Normal" BorderBrush="#FF4285C9"/>
-                    <Label x:Name="label49" Content="Type Of Policy" HorizontalAlignment="Left" Margin="28,73,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="txtTypeOfPolicy" HorizontalAlignment="Left" Height="22" Margin="28,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" FontWeight="Normal" BorderBrush="#FF4285C9"/>
-                    <Label x:Name="label50" Content="Inception Date" HorizontalAlignment="Left" Margin="28,120,0,0" VerticalAlignment="Top"/>
-                    <DatePicker x:Name="Date3" HorizontalAlignment="Left" Margin="28,146,0,0" VerticalAlignment="Top" FontWeight="Normal" Height="22" BorderBrush="#FF4285C9"/>
-                    <Label x:Name="label51" Content="Maturity Date" HorizontalAlignment="Left" Margin="28,215,0,0" VerticalAlignment="Top"/>
-                    <DatePicker x:Name="Date4" HorizontalAlignment="Left" Margin="28,240,0,0" VerticalAlignment="Top" FontWeight="Normal" Height="22" BorderBrush="#FF4285C9"/>
-                    <Label x:Name="label52" Content="Death Banefit" HorizontalAlignment="Left" Margin="231,25,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="txtDeathBenefit" HorizontalAlignment="Left" Height="69" Margin="224,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" FontWeight="Normal" BorderBrush="#FF4285C9"/>
-                    <TextBox x:Name="txtDisability" HorizontalAlignment="Left" Height="22" Margin="224,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" FontWeight="Normal" BorderBrush="#FF4285C9"/>
-                    <Label x:Name="label53" Content="Disability" HorizontalAlignment="Left" Margin="231,121,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="label54" Content="Term" HorizontalAlignment="Left" Margin="28,168,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="txtTerm" HorizontalAlignment="Left" Height="22" Margin="28,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" FontWeight="Normal" BorderBrush="#FF4285C9"/>
-                    <Label x:Name="label55" Content="Accident Benefit" HorizontalAlignment="Left" Margin="231,170,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="txtAccidentBenefit" HorizontalAlignment="Left" Height="67" Margin="224,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" FontWeight="Normal" BorderBrush="#FF4285C9"/>
-                    <Label x:Name="label56" Content="Estimated Maturity Value" HorizontalAlignment="Left" Margin="429,26,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="txtAccidentBenefit1" HorizontalAlignment="Left" Height="22" Margin="418,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" FontWeight="Normal" BorderBrush="#FF4285C9"/>
-                    <Label x:Name="label57" Content="Premium" HorizontalAlignment="Left" Margin="429,74,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="txtSummayPremium" HorizontalAlignment="Left" Height="22" Margin="418,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" FontWeight="Normal" BorderBrush="#FF4285C9"/>
-                    <Label x:Name="label58" Content="Mode Of Payment" HorizontalAlignment="Left" Margin="429,122,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="txtModeOfPayment" HorizontalAlignment="Left" Height="22" Margin="418,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" FontWeight="Normal" BorderBrush="#FF4285C9"/>
-                    <Label x:Name="label59" Content="Remarks" HorizontalAlignment="Left" Margin="429,170,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="txtRemarks" HorizontalAlignment="Left" Height="66" Margin="418,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="370" FontWeight="Normal" BorderBrush="#FF4285C9"/>
-                    <Label x:Name="label60" Content="Policy Number*" HorizontalAlignment="Left" Margin="641,73,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="textBox49" HorizontalAlignment="Left" Height="22" Margin="641,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderBrush="#FF4285C9"/>
+                    <GroupBox x:Name="groupBox8" Header="GroupBox" HorizontalAlignment="Left" Margin="616,51,0,0" VerticalAlignment="Top" Height="117" Width="172"/>
+                    <Label x:Name="label48" Content="Label" HorizontalAlignment="Left" Margin="28,25,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="22" Margin="28,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" FontWeight="Normal"/>
+                    <Label x:Name="label49" Content="Label" HorizontalAlignment="Left" Margin="28,73,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textBox40" HorizontalAlignment="Left" Height="22" Margin="28,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" FontWeight="Normal"/>
+                    <Label x:Name="label50" Content="Label" HorizontalAlignment="Left" Margin="28,120,0,0" VerticalAlignment="Top"/>
+                    <DatePicker HorizontalAlignment="Left" Margin="28,146,0,0" VerticalAlignment="Top" FontWeight="Normal" Height="22"/>
+                    <Label x:Name="label51" Content="Label" HorizontalAlignment="Left" Margin="28,215,0,0" VerticalAlignment="Top"/>
+                    <DatePicker HorizontalAlignment="Left" Margin="28,240,0,0" VerticalAlignment="Top" FontWeight="Normal" Height="22"/>
+                    <Label x:Name="label52" Content="Label" HorizontalAlignment="Left" Margin="231,25,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textBox41" HorizontalAlignment="Left" Height="69" Margin="224,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" FontWeight="Normal"/>
+                    <TextBox x:Name="textBox42" HorizontalAlignment="Left" Height="22" Margin="224,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" FontWeight="Normal"/>
+                    <Label x:Name="label53" Content="Label" HorizontalAlignment="Left" Margin="231,121,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="label54" Content="Label" HorizontalAlignment="Left" Margin="28,168,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textBox43" HorizontalAlignment="Left" Height="22" Margin="28,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" FontWeight="Normal"/>
+                    <Label x:Name="label55" Content="Label" HorizontalAlignment="Left" Margin="231,170,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textBox44" HorizontalAlignment="Left" Height="67" Margin="224,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" FontWeight="Normal"/>
+                    <Label x:Name="label56" Content="Label" HorizontalAlignment="Left" Margin="429,26,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textBox45" HorizontalAlignment="Left" Height="22" Margin="418,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" FontWeight="Normal"/>
+                    <Label x:Name="label57" Content="Label" HorizontalAlignment="Left" Margin="429,74,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textBox46" HorizontalAlignment="Left" Height="22" Margin="418,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" FontWeight="Normal"/>
+                    <Label x:Name="label58" Content="Label" HorizontalAlignment="Left" Margin="429,122,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textBox47" HorizontalAlignment="Left" Height="22" Margin="418,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" FontWeight="Normal"/>
+                    <Label x:Name="label59" Content="Label" HorizontalAlignment="Left" Margin="429,170,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textBox48" HorizontalAlignment="Left" Height="66" Margin="418,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="370" FontWeight="Normal"/>
+                    <Label x:Name="label60" Content="Label" HorizontalAlignment="Left" Margin="641,73,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textBox49" HorizontalAlignment="Left" Height="22" Margin="641,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Label x:Name="label61" Content="Label" HorizontalAlignment="Left" Margin="641,130,0,0" VerticalAlignment="Top"/>
                     <GroupBox x:Name="groupBox10" Header="GroupBox" HorizontalAlignment="Left" Margin="10,283,0,0" VerticalAlignment="Top" Height="317" Width="1047">
                         <DockPanel HorizontalAlignment="Left" Height="307" LastChildFill="False" Margin="0,0,-2,-12" VerticalAlignment="Top" Width="1037">
-                            <DataGrid x:Name="gvSummary" Height="307" VerticalAlignment="Top" Width="1038" FontWeight="Normal" FontSize="13.333" BorderBrush="#FF4285C9">
+                            <DataGrid x:Name="gvSummary" Height="307" VerticalAlignment="Top" Width="1038" FontWeight="Normal" FontSize="13.333">
                                 <DataGrid.Background>
                                     <ImageBrush ImageSource="SMDALOGO.jpg"/>
                                 </DataGrid.Background>
@@ -232,22 +224,22 @@
                             </DataGrid>
                         </DockPanel>
                     </GroupBox>
-                    <Button x:Name="btnSummarySave" Content="Save" HorizontalAlignment="Left" Margin="808,257,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" TabIndex="5" BorderBrush="#FF4285C9"/>
-                    <Button x:Name="btnSummayPrint" Content="Print" HorizontalAlignment="Left" Margin="888,257,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" TabIndex="5" BorderBrush="#FF4285C9"/>
-                    <Button x:Name="btnPrevious1" Content="Previous" HorizontalAlignment="Left" Margin="10,611,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" TabIndex="5" Click="btnPrevious1_Click" BorderBrush="#FF4285C9"/>
-                    <Button x:Name="btnNext2" Content="Next" HorizontalAlignment="Left" Margin="982,611,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" TabIndex="5" Click="btnNext2_Click" BorderBrush="#FF4285C9"/>
+                    <Button x:Name="button_Copy" Content="Button" HorizontalAlignment="Left" Margin="808,257,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" TabIndex="5"/>
+                    <Button x:Name="button_Copy1" Content="Button" HorizontalAlignment="Left" Margin="888,257,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" TabIndex="5"/>
+                    <Button x:Name="btnPrevious1" Content="Previous" HorizontalAlignment="Left" Margin="10,611,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" TabIndex="5" Click="btnPrevious1_Click"/>
+                    <Button x:Name="btnNext2" Content="Next" HorizontalAlignment="Left" Margin="982,611,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" TabIndex="5" Click="btnNext2_Click"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Database" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="109" FontWeight="Bold" Margin="0" Background="{x:Null}">
                 <Grid x:Name="Datagridall" Background="#FFE5E5E5">
                     <GroupBox x:Name="groupBox11" Header="GroupBox" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="60" Width="1047" FontSize="14.667"/>
-                    <Button x:Name="btnPrint" Content="Print" HorizontalAlignment="Left" Margin="32,35,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" TabIndex="5" BorderBrush="#FF4285C9"/>
-                    <Button x:Name="btnViewData" Content="View" HorizontalAlignment="Left" Margin="112,35,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" TabIndex="5" Click="btnViewData_Click" BorderBrush="#FF4285C9"/>
+                    <Button x:Name="btnPrint" Content="Print" HorizontalAlignment="Left" Margin="32,35,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" TabIndex="5"/>
+                    <Button x:Name="btnViewData" Content="View" HorizontalAlignment="Left" Margin="112,35,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" TabIndex="5" Click="btnViewData_Click"/>
                     <Label x:Name="label62" Content="View By Product" HorizontalAlignment="Left" Margin="210,33,0,0" VerticalAlignment="Top"/>
-                    <ComboBox x:Name="combDProduct" HorizontalAlignment="Left" Margin="314,35,0,0" VerticalAlignment="Top" Width="189" Background="{x:Null}" Height="22" Foreground="#FF3A3939" SelectionChanged="combDProduct_SelectionChanged" BorderBrush="#FF4285C9"/>
+                    <ComboBox x:Name="combDProduct" HorizontalAlignment="Left" Margin="314,35,0,0" VerticalAlignment="Top" Width="189" Background="{x:Null}" Height="22" Foreground="#FF3A3939" SelectionChanged="combDProduct_SelectionChanged"/>
                     <Label x:Name="lblCount" Content="No record found!!" HorizontalAlignment="Left" Margin="789,24,0,0" VerticalAlignment="Top" Height="37" Foreground="#FFDC2222" FontStyle="Italic" FontSize="21.333"/>
                     <GroupBox x:Name="groupBox12" Header="GroupBox" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" Height="259" Width="1047" FontSize="14.667">
-                        <DataGrid x:Name="gvAll" HorizontalAlignment="Left" VerticalAlignment="Top" Height="234" Width="1037" Margin="0,0,-2,-1" FontWeight="Normal" FontSize="13.333" BorderBrush="#FF4285C9">
+                        <DataGrid x:Name="gvAll" HorizontalAlignment="Left" VerticalAlignment="Top" Height="234" Width="1037" Margin="0,0,-2,-1" FontWeight="Normal" FontSize="13.333">
                             <DataGrid.Background>
                                 <ImageBrush ImageSource="SMDALOGO.jpg"/>
                             </DataGrid.Background>
@@ -255,14 +247,14 @@
                     </GroupBox>
                     <GroupBox x:Name="groupBox13" Header="GroupBox" HorizontalAlignment="Left" Margin="10,339,0,0" VerticalAlignment="Top" Height="262" Width="1047" FontSize="14.667">
                         <DockPanel HorizontalAlignment="Left" Height="238" LastChildFill="False" VerticalAlignment="Top" Width="1037" Margin="0,0,-2,-2">
-                            <DataGrid x:Name="gvPersonal" Height="237" VerticalAlignment="Top" Width="1037" FontWeight="Normal" FontSize="13.333" BorderBrush="#FF4285C9">
+                            <DataGrid x:Name="gvPersonal" Height="237" VerticalAlignment="Top" Width="1037" FontWeight="Normal" FontSize="13.333">
                                 <DataGrid.Background>
                                     <ImageBrush ImageSource="SMDALOGO.jpg"/>
                                 </DataGrid.Background>
                             </DataGrid>
                         </DockPanel>
                     </GroupBox>
-                    <Button x:Name="btnPrevious2" Content="Previous" HorizontalAlignment="Left" Margin="10,611,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" TabIndex="5" Click="btnPrevious2_Click" BorderBrush="#FF4285C9"/>
+                    <Button x:Name="btnPrevious2" Content="Previous" HorizontalAlignment="Left" Margin="10,611,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF97411A" FontWeight="Bold" Background="{x:Null}" TabIndex="5" Click="btnPrevious2_Click"/>
                 </Grid>
             </TabItem>
         </TabControl>

@@ -45,6 +45,7 @@ namespace SMDA //final product
             btnCancel.Visibility = Visibility.Hidden;
             btnRegisterPanel.Visibility = Visibility.Hidden;
             lblError.Visibility = Visibility.Hidden;
+            btnRegister.Visibility = Visibility.Hidden;
         }
         public void clearall()
         {
@@ -62,7 +63,7 @@ namespace SMDA //final product
                 try
                 {
                     string scon = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "\\SMADB.accdb";
-                    string query = "select * from Users where Username='" + txtPassword.Text + "' and password='" + txtPassword.Text + "' ;";
+                    string query = "select * from Users where Username='" + txtUsername.Text + "' and password='" + txtPassword.Text + "' ;";
                     OleDbConnection connet = new OleDbConnection(scon);
                     OleDbCommand cmd = new OleDbCommand(query, connet);
                     OleDbDataReader myReader;
@@ -78,11 +79,8 @@ namespace SMDA //final product
                     if (count == 1)
                     {
                         MainWindow myMain = new MainWindow();
-                        myMain.Show();
-                        myMain.BindGrid();
-                        myMain.IsEnabled = true;
-                        myMain.Visibility = Visibility.Visible;
-                        Hide();
+                        Close();
+                        myMain.Activate();
                     }
                     else
                     {
@@ -93,6 +91,10 @@ namespace SMDA //final product
                 {
                     MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
+            }
+            else if (txtUsername.Text=="Admin" && txtPassword.Text=="Admin")
+            {
+                btnRegister.Visibility = Visibility.Visible;
             }
             else
             {
@@ -166,11 +168,6 @@ namespace SMDA //final product
             {
                 MessageBox.Show("Please enter all required fields (*)", "Message", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-        }
-
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            Application.Current.Shutdown();
         }
     }
 }

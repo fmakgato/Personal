@@ -16,7 +16,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
-    <EnableSQLServerDebugging>false</EnableSQLServerDebugging>
+    <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
+    <EnableSQLServerDebugging>true</EnableSQLServerDebugging>
   </PropertyGroup>
 </Project>

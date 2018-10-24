@@ -32,9 +32,12 @@ namespace SMDA
         {
             InitializeComponent();
 
+
+            BindGrid();
             LoadCombos();
             lblConnected.Visibility = Visibility.Hidden;
-
+            Login mylogin = new Login();
+            mylogin.Show();
         }
         public void BindGrid()
         {
@@ -523,59 +526,58 @@ namespace SMDA
             //needs work
             int newIndex = gvAll.SelectedItems.Count - 1;
             if (newIndex >= 0)
-            {
                 newIndex = gvAll.SelectedItems.Count - 1;
-                gvAll.SelectedIndex = newIndex;
+            gvAll.SelectedIndex = newIndex;
 
-                DataRowView row = (DataRowView)gvSearch.SelectedItems[newIndex];
+            DataRowView row = (DataRowView)gvSearch.SelectedItems[0];
 
-                txtSurname1.Text = row["Surname"].ToString();
-                txtFirst1.Text = row["FirstName"].ToString();
-                txtMiddle1.Text = row["MiddleName"].ToString();
-                txtID1.Text = row["IDNumber"].ToString();
-                Date1.Text = row["DateOfBirth"].ToString();
-                txtMaiden1.Text = row["MaidenName"].ToString();
-                combGender1.Text = row["Gender"].ToString();
-                txtMarital1.Text = row["MaritalStatus"].ToString();
-                txtLanguage1.Text = row["HomeLanguage"].ToString();
-                txtCountry1.Text = row["Country"].ToString();
-                txtPostal1.Text = row["PostalAddress"].ToString();
-                txtCode1.Text = row["PostalCode1"].ToString();
-                txtPhysical1.Text = row["PhysicalAddress"].ToString();
-                txtCode2.Text = row["PostalCode2"].ToString();
-                txtEmployer1.Text = row["Employer"].ToString();
-                txtOccupation1.Text = row["Occupation"].ToString();
-                txtWorkA1.Text = row["WorkAddress"].ToString();
-                txtCode3.Text = row["PostalCode3"].ToString();
-                txtPremium1.Text = row["Premium"].ToString();
-                txtPolicy.Text = row["PolicyNo"].ToString();
-                combProduct1.Text = row["Product"].ToString();
-                txtTWork1.Text = row["TelWork"].ToString();
-                txtTHome1.Text = row["TelHome"].ToString();
-                txtMobile1.Text = row["Mobile"].ToString();
-                txtEmail.Text = row["Email"].ToString();
-                txtSurname2.Text = row["SpauseSurname"].ToString();
-                txtFirst2.Text = row["SpauseFirstName"].ToString();
-                txtMiddle2.Text = row["SpauseMiddleName"].ToString();
-                txtID2.Text = row["SpauseIDNumber"].ToString();
-                Date2.Text = row["SpauseDateOfBirth"].ToString();
-                txtMaiden2.Text = row["SpauseMaidenName"].ToString();
-                txtFax.Text = row["Fax"].ToString();
-                txtEmail2.Text = row["SpauseEmail"].ToString();
-                txtCountry2.Text = row["SpauseCountry"].ToString();
-                txtTWork2.Text = row["SpauseTelWork"].ToString();
-                txtTHome2.Text = row["SpauseTelHome"].ToString();
-                txtMobile2.Text = row["SpauseMobile"].ToString();
-                btnSSave.Content = "Update";
-                txtNumber.Text = row["ID"].ToString();
-                txtSurname3.Text = row["ChildSurname"].ToString();
-                txtFirst3.Text = row["ChildFirstName"].ToString();
-                txtMiddle3.Text = row["ChildMiddleName"].ToString();
-                combGender3.Text = row["ChildGender"].ToString();
+            txtSurname1.Text = row["Surname"].ToString();
+            txtFirst1.Text = row["FirstName"].ToString();
+            txtMiddle1.Text = row["MiddleName"].ToString();
+            txtID1.Text = row["IDNumber"].ToString();
+            Date1.Text = row["DateOfBirth"].ToString();
+            txtMaiden1.Text = row["MaidenName"].ToString();
+            combGender1.Text = row["Gender"].ToString();
+            txtMarital1.Text = row["MaritalStatus"].ToString();
+            txtLanguage1.Text = row["HomeLanguage"].ToString();
+            txtCountry1.Text = row["Country"].ToString();
+            txtPostal1.Text = row["PostalAddress"].ToString();
+            txtCode1.Text = row["PostalCode1"].ToString();
+            txtPhysical1.Text = row["PhysicalAddress"].ToString();
+            txtCode2.Text = row["PostalCode2"].ToString();
+            txtEmployer1.Text = row["Employer"].ToString();
+            txtOccupation1.Text = row["Occupation"].ToString();
+            txtWorkA1.Text = row["WorkAddress"].ToString();
+            txtCode3.Text = row["PostalCode3"].ToString();
+            txtPremium1.Text = row["Premium"].ToString();
+            txtPolicy.Text = row["PolicyNo"].ToString();
+            combProduct1.Text = row["Product"].ToString();
+            txtTWork1.Text = row["TelWork"].ToString();
+            txtTHome1.Text = row["TelHome"].ToString();
+            txtMobile1.Text = row["Mobile"].ToString();
+            txtEmail.Text = row["Email"].ToString();
+            txtSurname2.Text = row["SpauseSurname"].ToString();
+            txtFirst2.Text = row["SpauseFirstName"].ToString();
+            txtMiddle2.Text = row["SpauseMiddleName"].ToString();
+            txtID2.Text = row["SpauseIDNumber"].ToString();
+            Date2.Text = row["SpauseDateOfBirth"].ToString();
+            txtMaiden2.Text = row["SpauseMaidenName"].ToString();
+            txtFax.Text = row["Fax"].ToString();
+            txtEmail2.Text = row["SpauseEmail"].ToString();
+            txtCountry2.Text = row["SpauseCountry"].ToString();
+            txtTWork2.Text = row["SpauseTelWork"].ToString();
+            txtTHome2.Text = row["SpauseTelHome"].ToString();
+            txtMobile2.Text = row["SpauseMobile"].ToString();
+            btnSSave.Content = "Update";
+            txtNumber.Text = row["ID"].ToString();
+            txtSurname3.Text = row["ChildSurname"].ToString();
+            txtFirst3.Text = row["ChildFirstName"].ToString();
+            txtMiddle3.Text = row["ChildMiddleName"].ToString();
+            combGender3.Text = row["ChildGender"].ToString();
 
-                DatagridPersonal.IsEnabled = false;
-                DatagridSummary.IsEnabled = false;
-            }
+            DatagridPersonal.IsEnabled = false;
+            DatagridSummary.IsEnabled = false;
+
         }
 
         private void btnNextRecord_Click(object sender, RoutedEventArgs e)
@@ -585,58 +587,7 @@ namespace SMDA
                 //needs work
                 if (gvAll.SelectedItems.Count > 0)
                 {
-                    DataRowView row = (DataRowView)gvSearch.SelectedItems[0];
-
-                    txtSurname1.Text = row["Surname"].ToString();
-                    txtFirst1.Text = row["FirstName"].ToString();
-                    txtMiddle1.Text = row["MiddleName"].ToString();
-                    txtID1.Text = row["IDNumber"].ToString();
-                    Date1.Text = row["DateOfBirth"].ToString();
-                    txtMaiden1.Text = row["MaidenName"].ToString();
-                    combGender1.Text = row["Gender"].ToString();
-                    txtMarital1.Text = row["MaritalStatus"].ToString();
-                    txtLanguage1.Text = row["HomeLanguage"].ToString();
-                    txtCountry1.Text = row["Country"].ToString();
-                    txtPostal1.Text = row["PostalAddress"].ToString();
-                    txtCode1.Text = row["PostalCode1"].ToString();
-                    txtPhysical1.Text = row["PhysicalAddress"].ToString();
-                    txtCode2.Text = row["PostalCode2"].ToString();
-                    txtEmployer1.Text = row["Employer"].ToString();
-                    txtOccupation1.Text = row["Occupation"].ToString();
-                    txtWorkA1.Text = row["WorkAddress"].ToString();
-                    txtCode3.Text = row["PostalCode3"].ToString();
-                    txtPremium1.Text = row["Premium"].ToString();
-                    txtPolicy.Text = row["PolicyNo"].ToString();
-                    combProduct1.Text = row["Product"].ToString();
-                    txtTWork1.Text = row["TelWork"].ToString();
-                    txtTHome1.Text = row["TelHome"].ToString();
-                    txtMobile1.Text = row["Mobile"].ToString();
-                    txtEmail.Text = row["Email"].ToString();
-                    txtSurname2.Text = row["SpauseSurname"].ToString();
-                    txtFirst2.Text = row["SpauseFirstName"].ToString();
-                    txtMiddle2.Text = row["SpauseMiddleName"].ToString();
-                    txtID2.Text = row["SpauseIDNumber"].ToString();
-                    Date2.Text = row["SpauseDateOfBirth"].ToString();
-                    txtMaiden2.Text = row["SpauseMaidenName"].ToString();
-                    txtFax.Text = row["Fax"].ToString();
-                    txtEmail2.Text = row["SpauseEmail"].ToString();
-                    txtCountry2.Text = row["SpauseCountry"].ToString();
-                    txtTWork2.Text = row["SpauseTelWork"].ToString();
-                    txtTHome2.Text = row["SpauseTelHome"].ToString();
-                    txtMobile2.Text = row["SpauseMobile"].ToString();
-                    btnSSave.Content = "Update";
-                    txtNumber.Text = row["ID"].ToString();
-                    txtSurname3.Text = row["ChildSurname"].ToString();
-                    txtFirst3.Text = row["ChildFirstName"].ToString();
-                    txtMiddle3.Text = row["ChildMiddleName"].ToString();
-                    combGender3.Text = row["ChildGender"].ToString();
-
-                    DatagridPersonal.IsEnabled = false;
-                    DatagridSummary.IsEnabled = false;
-                }
-                else if (gvSearch.SelectedItems.Count > 0)
-                {
-                    DataRowView row = (DataRowView)gvSearch.SelectedItems[0];
+                    DataRowView row = (DataRowView)gvSearch.SelectedItems;
 
                     txtSurname1.Text = row["Surname"].ToString();
                     txtFirst1.Text = row["FirstName"].ToString();
@@ -782,12 +733,6 @@ namespace SMDA
             mylogin.Show();
             Close();
 
-        }
-
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            Login mylogin = new Login();
-            mylogin.Show();
         }
     }
 }
